@@ -12,7 +12,7 @@ For instance, if you use an icon depicting a floppy disk to indicate a
 "save" button, screen reader users should hear the word "save" when
 focusing on the button.
 
-It is easy to revealed text to screen reader users and hide it from
+It is easy to reveal text to screen reader users and hide it from
 sighted users using css... though finding the correct css
 more difficult than you would expect. Don't try to roll your own.
 
@@ -21,7 +21,7 @@ Sometimes Hidden
 
 It's sometimes useful to have text that is hidden until keyboard
 focus lands on it, at which point it is revealed: this is how [skip
-links](../skip-links/READMEm.de) should work. That way, people using
+links](../skip-links/README.md) should work. That way, people using
 keyboards without the help of a screen reader (for instance, people
 with motor disabilities, or your site's power users!) can get the
 benefit of your skip links.
@@ -47,12 +47,15 @@ but make sure you do your research before trusting them. Many libraries
 attempt to do this, but do it poorly. There are also LOTS of outdated
 or inaccurate blogs/tutorials on the web about this topic. So be careful.
 
-Even in projects where (1) and (2) are you go-to, in special
-places you might prefer the appearance of (3) for skip links: they
+Even in projects where (1) and (2) are your go-to, in certain
+situations you might prefer the appearance of (3) for skip links: they
 are always rendered in the upper-left of the screen, on top of all
 other content. Bootstrap-style elements cause the DOM to shift when
 revealed. One or the other may be more suited for skip links and other
-reveal-on-focus text according to your design. Compare [https://osc.hul.harvard.edu/](https://osc.hul.harvard.edu/) (Bootstrap-style) and [http://copyright.lib.harvard.edu/](http://copyright.lib.harvard.edu/) (Wordpress style)
+reveal-on-focus text in your project's design. Compare
+[https://osc.hul.harvard.edu/](https://osc.hul.harvard.edu/) (Bootstrap-style)
+and [http://copyright.lib.harvard.edu/](http://copyright.lib.harvard.edu/)
+(Wordpress style).
 
 
 When To Do It
