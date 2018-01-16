@@ -13,7 +13,7 @@ of your site.
 
 
 To Fix
-======
+------
 
 Include a small number of "skip links" in convenient places so people can
 jump over content they don't need at the moment, straight to interesting
