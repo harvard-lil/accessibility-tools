@@ -21,6 +21,6 @@ the page... so the user has to start all over again.
 
 To Fix
 ------
-Include hash-focus.js (or its source, [https://github.com/Automattic/\_s/blob/master/js/skip-link-focus-fix.js](https://github.com/Automattic/_s/blob/master/js/skip-link-focus-fix.js)) in every web project. EVERY web project.
+Include [hash-focus.js](./hash-focus.js) (or its source, [https://github.com/Automattic/\_s/blob/master/js/skip-link-focus-fix.js](https://github.com/Automattic/_s/blob/master/js/skip-link-focus-fix.js)) in every web project. EVERY web project.
 
 And then you won't have to worry about this.
