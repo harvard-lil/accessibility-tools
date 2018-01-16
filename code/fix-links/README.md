@@ -11,7 +11,7 @@ Common uses:
 -  [Skip links](https://webaim.org/techniques/skipnav/) for keyboard users
 
 However, there is a long-standing issue with many popular web browsers:
-a lot of times, the screen scrolls, but keyboard focus doesn't, making
+a lot of times, the screen scrolls but keyboard focus doesn't follow, making
 the link worse than useless. Either:
 1) the focus remains on the link element... so the user STILL has to tab
 through everything, skipping nothing, AND now they can't even see what
