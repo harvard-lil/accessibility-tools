@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <style>
+      /* The page is artificially made taller than the viewport,
+         so that you can watch it scroll, as you follow footnote links.
+         Sometimes, but rarely, useful in real life.
+      */
+      html {
+        height: 150%;
+      }
+      /* Basic styles*/
+      body {
+        width: 75%;
+        margin: auto;
+        margin-top: 50px;
+        font-size: 1.1em;
+        line-height: 1.5;
+      }
+      .fn-reference {
+        vertical-align: super;
+        font-size: .7em;
+      }
+      /* Focus styles for the footnote links, to make it easier to
+         visually move between footnotes and the main text.
+
+         Something like this is always useful in real life: it
+         particularly assists people with low vision, people with
+         dyslexia, and people with cognitive disabilities.
+
+         These particular styles are merely for illustration
+         and are not intended to be incorporated into a real design.
+         Production designs should not introduce unnecessary motion,
+         should work well with the rest of the design, etc.
+      */
+      .fn-reference:focus, .fn-backref:focus {
+        border: 2px solid yellow;
+      }
+      .fn-focused {
+        margin: 5px;
+        padding: 5px;
+        background-color: #d9edf7;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../hidden-text/sr-text-bootstrap.css">
+
+  </head>
+  <body>
+    <h1>The Brain Has Its Own Language</h1>
+    <p>
+      Across the centuries are pretty stories for which there's little good evidence. <a href="#f1" class="fn-reference" id="s1"><span class="sr-only">Footnote</span>1</a> Brain is the seed of intelligence! Hydrogen atoms: two ghostly white figures in coveralls and helmets are softly dancing. Kindling the energy hidden in matter, a tesseract made in the interiors of collapsing stars. A still more glorious dawn awaits <a href="#f2" class="fn-reference" id="s2"><span class="sr-only">Footnote</span>2</a>; billions upon billions vanquish the impossible, rich in heavy atoms. Hundreds of thousands made in the interiors of collapsing stars emerged into consciousness: the carbon in our encyclopaedia galactica, in the globular star cluster, Vangelis.
+    </p>
+
+    <h2>Footnotes</h2>
+    <ul>
+      <li id="f1" class="footnote">
+        <span class="sr-only">Back to Footnote </span>
+        <a class="fn-backref" href="#s1">1</a>
+        <span class="sr-only">source</span>
+        http://saganipsum.com/
+      </li>
+      <li id="f2" class="footnote">
+        <span class="sr-only">Back to Footnote</span>
+        <a class="fn-backref" href="#s2">2</a>
+        <span class="sr-only">source</span>
+        https://www.youtube.com/watch?v=zSgiXGELjbc
+      </li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../fix-links/fix-links.js"></script>
+    <script>
+      history.navigationMode = 'compatible';
+      $(document).ready(function() {
+
+        // Trigger on page load
+        if (window.location.hash.substr(1)) {
+          highlightFootnote();
+        }
+
+        // Trigger on user action
+        $("a.fn-reference").click(function() {
+          highlightFootnote(this);
+        });
+        $("a.fn-backref").click(function() {
+          $(this).parents("li.footnote").removeClass("fn-focused");
+        });
+
+      });
+
+      function highlightFootnote(a){
+        if(a){
+          var id = $(a).attr('href').slice(1);
+        }
+        else {
+          var id = window.location.hash.substr(1);
+        }
+        $("li.footnote").removeClass("fn-focused");
+        $("li#" + id).addClass("fn-focused");
+      }
+    </script>
+  </body>
+</html>
+
