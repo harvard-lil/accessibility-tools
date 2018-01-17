@@ -11,3 +11,4 @@
 ### Automated Testing
 
 - [Sanity checking: valid HTML5 required](./tests/valid-html/)
+- [In-browser profilers](./tests/in-browser-profilers/) (coming soon)
