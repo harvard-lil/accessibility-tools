@@ -2,11 +2,10 @@
 
 ### Helpful HTML/CSS/JS
 
-
-- [Make sure links work](./code/fix-links/README.md)
-- [Skip to content](./code/skip-links/README.md)
-- [Hidden text for extra context](./code/hidden-text/README.md)
-- [Accessible footnotes](./code/footnotes/README.md)(coming soon)
+- [Make sure links work](./code/fix-links/)
+- [Skip to content](./code/skip-links/)
+- [Hidden text for extra context](./code/hidden-text/)
+- [Accessible footnotes](./code/footnotes/) (coming soon)
 
 ### Automated Testing
 (coming soon)

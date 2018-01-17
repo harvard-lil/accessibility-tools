@@ -21,7 +21,7 @@ Sometimes Hidden
 
 It's sometimes useful to have text that is hidden until keyboard
 focus lands on it, at which point it is revealed: this is how [skip
-links](../skip-links/README.md) should work. That way, people using
+links](../skip-links/) should work. That way, people using
 keyboards without the help of a screen reader (for instance, people
 with motor disabilities, or your site's power users!) can get the
 benefit of your skip links.

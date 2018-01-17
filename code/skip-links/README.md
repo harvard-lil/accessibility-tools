@@ -19,10 +19,10 @@ Include a small number of "skip links" in convenient places so people can
 jump over content they don't need at the moment, straight to interesting
 content.
 
-1. [Make sure links to hashes/fragments work in your project.](../fix-links/README.md)
+1. [Make sure links to hashes/fragments work in your project.](../fix-links/)
 
 2. [Make sure your project has css for hiding text, and for hiding text
-until people focus on it.](../hidden-text/README.md)
+until people focus on it.](../hidden-text/)
 
 3. Add skip links like this:
 
