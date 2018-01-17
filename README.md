@@ -6,6 +6,8 @@
 - [Skip to content](./code/skip-links/)
 - [Hidden text for extra context](./code/hidden-text/)
 - [Accessible footnotes](./code/footnotes/)
+- [Form validation errors](./code/validation/) (coming soon)
 
 ### Automated Testing
-(coming soon)
+
+- [Sanity checking: valid html5 required](./tests/valid-html/)
