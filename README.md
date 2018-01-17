@@ -10,4 +10,4 @@
 
 ### Automated Testing
 
-- [Sanity checking: valid html5 required](./tests/valid-html/)
+- [Sanity checking: valid HTML5 required](./tests/valid-html/)

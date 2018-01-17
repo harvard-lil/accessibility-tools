@@ -68,5 +68,5 @@ Some options:
   `copy(document.documentElement.outerHTML)`. This will put the whole
   rendered DOM in your clipboard. You can then paste it into a
   file (e.g. `the-page.html`), and pass that file to the validator.
-- ... There's probably a faster way. If I think of one, I'll post it
-  here :-)
+- There's probably a faster way, or a more scriptable way (that doesn't
+  resort to ApplesScript). If I think of one, I'll post it here :-)
