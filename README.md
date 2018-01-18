@@ -11,7 +11,7 @@
 ### Content and Context
 
 - [Headings](./content/headings/)
-- [Help text](./content/help-text/)
+- [DOM order matters](./content/order-matters/)
 
 ### Automated Testing
 
