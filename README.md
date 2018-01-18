@@ -10,7 +10,8 @@
 
 ### Content and Context
 
-- [Headings](./headings/)
+- [Headings](./content/headings/)
+- [Help text](./content/help-text/)
 
 ### Automated Testing
 
