@@ -8,6 +8,10 @@
 - [Accessible footnotes](./code/footnotes/)
 - [Form validation errors](./code/validation/) (coming soon)
 
+### Content and Context
+
+- [Headings](./headings/)
+
 ### Automated Testing
 
 - [Sanity checking: valid HTML5 required](./tests/valid-html/)
