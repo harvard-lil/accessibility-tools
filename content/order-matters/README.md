@@ -44,8 +44,8 @@ Then, you can use CSS to move elements around to suit your design (e.g.,
 placing help text beneath a form element, if you decide that's a good
 UX for sighted people; placing legalese at the bottom of a page; etc.).
 
-If you think you then put a lot of junk in front of the most important
-part of the page (e.g., most people just want to get to the sign up
+If you think you therefore put a lot of junk in front of the most important
+part of the page (e.g., most people just want to get to the sign-up
 form and don't want to read the extra info, so won't want to tab
 through it), you can use [skip links](../../code/skip-links/) to improve
 the keyboard-user's UX further.
@@ -60,21 +60,21 @@ order solves all your problems.
 In that case, you sometimes have to get creative.
 
 When you are dealing with large sections, [proper headings](../headings/)
-go a long way, as does good navigation. In certain situation, a
-[skip link](../../code/skip-links/) or [pair of skip links](../../footnotes/)
+go a long way, as does good navigation. In certain situations, a
+[skip link](../../code/skip-links/) or [pair of skip links](../../code/footnotes/)
 might do the trick.
 
 #### Help text, tool tips, and similar
 
 But in the case of form help text and other similar components, where
-you want to supply extra detail in an inobtrusive way, you may have
-recourse to the `aria-describedby` attribute. Aria-describedby is
+you want to supply extra detail in an inobtrusive way, you can use the
+`aria-describedby` attribute. `Aria-describedby` is
 [Boostrap's recommended](https://v4-alpha.getbootstrap.com/components/forms/#help-text)
 technique for associating help text with form fields. You simply add
 the aria attribute to the input field being described, and set it equal
 to the id of the element doing the describing. Then, the help text is
-read to people, when their assistive technology focuses on the form
+read to people when their assistive technology focuses on the form
 field, or when the person uses special keyboard shortcuts to request
-help text, if there is any.
+help text (if there is any).
 
 Check out the Bootstrap docs for a few examples!
