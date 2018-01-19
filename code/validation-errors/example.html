@@ -91,21 +91,21 @@
     <script>
       // Set focus to form validation error list, if present
       (function errorFocus(){
-          try {document.getElementById("form-errors-heading").focus();}
-          catch (e) {}
+        try {document.getElementById("form-errors-heading").focus();}
+        catch (e) {}
       })();
       (function addLoadEvent(errorFocus) {
-          var oldonload = window.onload;
-          if (typeof window.onload != 'function') {
-              window.onload = errorFocus;
-          } else {
-              window.onload = function() {
-                  if (oldonload) {
-                      oldonload();
-                  }
-                  errorFocus();
-              }
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+          window.onload = errorFocus;
+        } else {
+          window.onload = function() {
+            if (oldonload) {
+              oldonload();
+            }
+            errorFocus();
           }
+        }
       })();
     </script>
   </body>
