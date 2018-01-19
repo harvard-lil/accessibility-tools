@@ -6,7 +6,7 @@
 - [Skip to content](./code/skip-links/)
 - [Hidden text for extra context](./code/hidden-text/)
 - [Accessible footnotes](./code/footnotes/)
-- [Form validation errors](./code/validation/)
+- [Form validation errors](./code/validation-errors/)
 
 ### Content and Context
 
