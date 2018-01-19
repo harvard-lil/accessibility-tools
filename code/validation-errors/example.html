@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <style>
+      /* The page is artificially made taller than the viewport,
+         so that you can watch it scroll, as you follow links.
+         Sometimes, but rarely, useful in real life.
+      */
+      html {
+        height: 150%;
+      }
+      /* Basic styles*/
+      body {
+        width: 75%;
+        margin: auto;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Article Submission Form</h1>
+
+    <!-- Include a list of validation errors at the top -->
+    <div class="form-errors alert alert-danger">
+
+      <!-- Tell people how many errors there are -->
+      <p>Please correct the following <strong>2 error(s)</strong>: </p>
+
+      <!-- A hidden heading to serve as target for screen readers
+
+           It is redundant with the paragraph text above, but was
+           chosen for convenience: we did not like the visual effect
+           of setting focus on a visible heading; we liked the css
+           for paragraph + strong for sighted visitors.
+
+           Since keyboard focus is managed here and placed directly on
+           the heading, the repetition in the markup does not result in
+           a repetitious user experience.
+      -->
+      <h2 id="form-errors-heading" tabindex="-1" class="sr-only">Please correct the following 2 error(s)</h2>
+
+      <!-- Use a real list -->
+      <ul>
+        <!-- Link directly to the input that needs fixing. -->
+        <li><a href="#authors">Author(s)</a>: This field is required.</li>
+        <li><a href="#serial">Journal Title</a>: This field is required.</li>
+      </ul>
+    </div>
+
+    <form role="form" method="POST">
+
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Article Title
+        </label>
+        <input aria-describedby="help-title" aria-required="true"  class="form-control" id="title" name="title" value="My Article" type="text">
+      </div>
+      <p id="help-title" class="help-block">Type the full title of the article, as it will appear in the published version.</p>
+
+      <div class="form-group has-error">
+        <!-- Add redundant inline error messages to the label text.
+             Here, redundancy aids recall and can help avoid having
+             to repeatedly consult the error list, if a person would
+             rather not.
+        -->
+        <label for="serial" class="control-label">
+          Journal Title (This field is required.)
+        </label>
+        <!-- Note the presence of aria-invalid="true" -->
+        <input aria-describedby="help-serial" aria-invalid="true" aria-required="true" class="form-control" id="serial" name="serial" value="" type="text">
+      </div>
+      <p id="help-serial" class="help-block">Type the full title of the journal in which the article will appear.</p>
+
+      <div class="form-group has-error">
+        <label for="authors" class="control-label">
+          Author(s) (This field is required.)
+        </label>
+        <textarea aria-describedby="help-authors" aria-invalid="true" aria-required="true" class="form-control" id="authors" name="authors"></textarea>
+      </div>
+      <p id="help-authors" class="help-block">Type the full name (first name, middle initial, last name) of each author, as it will appear in the published version. Enter multiple authors on separate lines.</p>
+
+      <div class="form-group">
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+
+    </form>
+
+    <script>
+      // Set focus to form validation error list, if present
+      (function errorFocus(){
+          try {document.getElementById("form-errors-heading").focus();}
+          catch (e) {}
+      })();
+      (function addLoadEvent(errorFocus) {
+          var oldonload = window.onload;
+          if (typeof window.onload != 'function') {
+              window.onload = errorFocus;
+          } else {
+              window.onload = function() {
+                  if (oldonload) {
+                      oldonload();
+                  }
+                  errorFocus();
+              }
+          }
+      })();
+    </script>
+  </body>
+</html>
