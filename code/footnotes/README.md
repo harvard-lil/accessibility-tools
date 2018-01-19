@@ -14,8 +14,9 @@ To Do
 until people focus on it.](../hidden-text/)
 
 3. See [example.html](./example.html) for a basic implementation of
-   accessible footnotes. Sample css, html, and js is included, along
-   with explanatory comments. Of note:
+   accessible footnotes. Open the source in your browser to see how it
+   works! Sample css, html, and js is included, along with explanatory
+   comments. Of note:
 
    - The marker of each note is a link.
    - It is easy to see when the marker has keyboard focus.
