@@ -34,7 +34,7 @@ The Spec
 Let's Do It!
 ------------
 
-[Scott O'Hara's approach to modals](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)[archived at https://perma.cc/P49Q-MFGE] is the best I've seen. If you are rolling your own, I recommend you make heavy use of his code.
+[Scott O'Hara's approach to modals](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/) (archived at https://perma.cc/P49Q-MFGE) is the best I've seen. If you are rolling your own, I recommend you make heavy use of his code.
 
 Since most of our apps are built on top of Bootstrap, we're going to start with a Bootstrap 3 modal and fix it up. Check out [example.html](../example.html) for a working example with detailed instructions.
 
