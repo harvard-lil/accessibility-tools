@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>An Accessible Modal with Bootstrap</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <style>
+    /* This is an extra style to make sure that users can see when the
+      modal's close button has keyboard focus.
+
+      This, or something even better, may be necessary for your theme.
+    */
+    .close:focus, .close:hover {
+      outline: 2px dotted black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Keep your modals here -->
+  <div class="modal-container">
+
+    <!-- A modal, using all of Bootstrap's classes and nested divs. -->
+    <!-- http://bootstrapdocs.com/v3.0.3/docs/javascript/#modals -->
+    <!--
+         Default Bootstrap modals are `display: none` by default when
+         closed, and toggle to `display: block` when opened, so no work
+         to do there!
+
+         Default Bootstrap modals close in response to the escape key,
+         so no work to do there!
+
+         As best as I can tell, Bootstrap's default JS will set keyboard
+         focus to the toggle button when the modal is dismissed, so
+         no work to do there!
+         (unless your modals trigger automatically...
+         which they should never do :-) In that case, you'll need
+         to manually set focus to the right spot: put the user back
+         where they were.)
+
+         Note that the modal has a unique id.
+         Note that the role is set to "dialog". Some people prefer "document".
+           More research to follow.
+         Note that the modal is labeled. You can use `aria-labelled-by`,
+           and point it to the id of an element, or you can use
+           `aria-label` and provide the label text. One or the other
+           must be present.
+
+         Note that the docs suggest the tabindex needs to be set to -1.
+           That is because Bootstrap will attempt to set the keyboard focus
+           to this element when the modal is opened, and it will fail unless
+           tabindex -1 is set.
+           BUT!!!!! I have found this behavior to be buggy
+           and unreliable! I prefer to manually set focus myself, using
+           a hidden paragraph target, as with skip links.
+    -->
+    <div id="sign-up-modal" class="modal" role="dialog" aria-labelled-by="sign-up-heading">
+      <!-- We set the interior div's role to document so that NVDA can force document mode and read contents inside. This move may no longer
+      be necessary. -->
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- This is the target element for setting focus to the modal. -->
+            <p class="sr-only focus-target" tabindex="-1">Sign Up Modal</p>
+            <!-- This close button dismisses the modal using Bootstrap magic.
+            Note that the data attribute references "modal", not the
+            modal's id! -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 id="sign-up-heading">Sign Up</h2>
+            <p>You know you want to.</p>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> A checkbox!
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <!-- This (redundant, likely unnecessary) close button dismisses the modal using Bootstrap magic -->
+              <button type="cancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- If a page has several modals, just add more divs here -->
+    <!--<div class="modal-content" aria-hidden="true" role="dialog"></div> -->
+    <!--<div class="modal-content" aria-hidden="true" role="dialog"></div> -->
+  </div>
+  <div id="regular-content">
+    <!-- This page is too simple to require a skip link, but this is where
+         we'd put one if we needed it-->
+    <!-- <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a> -->
+    <div id="main" class="jumbotron">
+      <div class="container">
+        <h1>Main Content</h1>
+        <p>We should be able to navigate to and press these buttons only while the modal is closed.</p>
+        <button type="button" class="btn btn-warning" onclick="alert('Sizzle!');">
+          Sizzle
+        </button>
+        <button type="button" class="btn btn-warning" onclick="alert('Pop!');">Pop</button>
+        <!-- Here's the button to open the modal. It works by Bootstrap magic. -->
+        <button id="trigger-model" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+      </div>
+    </div>
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus facilisis libero euismod gravida. Nulla sem nulla, gravida in arcu vestibulum, hendrerit vestibulum metus. Donec massa nisl, pharetra et libero in, ullamcorper dapibus dolor. In non turpis fringilla, convallis erat placerat, laoreet orci. Suspendisse augue tellus, vestibulum vel lacus eget, molestie sodales felis. Pellentesque aliquam maximus ultricies. Etiam vitae sollicitudin velit.</p>
+
+      <p>Vestibulum id libero erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut in congue dui. Nunc porttitor ex feugiat leo malesuada elementum. Morbi ultrices enim semper egestas luctus. Nullam elementum sapien id mauris rhoncus, sit amet tincidunt justo rutrum. Aenean eu tempor sem. Cras mattis, magna in lacinia lobortis, neque ante bibendum diam, ut tincidunt turpis dolor vestibulum velit. Proin vitae consectetur urna, molestie consequat elit. Sed cursus ullamcorper vestibulum. Vestibulum venenatis gravida neque. Maecenas fringilla ante eu odio egestas cursus. Nullam at felis nunc. Cras scelerisque turpis enim, id tristique libero bibendum eu. Mauris placerat orci eget iaculis gravida. Fusce lacinia neque et mauris maximus, nec tincidunt magna volutpat.</p>
+
+      <p>Aliquam sollicitudin felis id eros porta fringilla. Nullam eleifend sed odio vitae pharetra. Curabitur eleifend, velit non finibus lobortis, purus tellus malesuada ante, ut vulputate neque diam id ligula. Vestibulum malesuada, ipsum eu pretium varius, magna elit venenatis mi, id cursus neque augue sit amet nisi. Proin porttitor molestie laoreet. Donec iaculis elit arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porta quam nibh, tincidunt pretium felis ornare vel. Vestibulum ultrices felis vitae mauris euismod, et lobortis mauris consectetur. Vivamus viverra, nibh et facilisis scelerisque, ipsum augue hendrerit lectus, at fermentum turpis augue ut arcu. Vestibulum quam enim, dignissim ac consectetur tristique, blandit nec nibh. Quisque fermentum nunc at ornare dapibus. Suspendisse aliquet in tellus in pretium. Nullam a lacus sed leo dapibus pellentesque.</p>
+
+      <p>Etiam sem tortor, convallis vitae porta non, ultricies sed magna. Suspendisse imperdiet consequat tempor. Cras purus lacus, varius nec dictum vitae, mattis non justo. Pellentesque dapibus risus sed tristique lobortis. Duis at placerat sapien. Morbi feugiat enim sed lectus ultricies, nec sollicitudin felis euismod. Integer convallis urna ut placerat lobortis. Duis pellentesque arcu et iaculis fermentum. Nulla facilisi. Praesent sit amet placerat orci. Vestibulum dignissim dapibus imperdiet. Donec in tincidunt ex. Morbi rutrum, libero sed tincidunt cursus, tortor sem elementum justo, non porta ligula lorem in felis. Integer mi dui, gravida a vestibulum ut, vehicula ut quam. Suspendisse eu nunc risus.</p>
+
+      <p>Fusce pretium felis vel consequat faucibus. Duis mattis ac nisl nec facilisis. Vestibulum id gravida ante. Curabitur nec feugiat orci. Praesent risus mauris, viverra ut posuere nec, eleifend nec odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin ornare mi vulputate convallis scelerisque.</p>
+
+      <p>Donec hendrerit, felis non convallis mollis, metus ante suscipit lacus, non vehicula risus erat nec tortor. Aenean auctor fermentum enim, porta varius augue efficitur id. Mauris malesuada velit eu purus iaculis auctor. Praesent rutrum ante elit, quis malesuada elit mattis ut. Cras vitae turpis rhoncus, pellentesque urna et, vestibulum mi. Vestibulum efficitur eleifend nisi sit amet congue. Quisque ultrices laoreet risus, non pulvinar ex congue quis.</p>
+
+      <p>Nam ornare eleifend facilisis. Vestibulum a dolor sed elit aliquam auctor a eu purus. Cras finibus bibendum eleifend. Suspendisse tristique mauris venenatis massa dapibus consequat vel at diam. Suspendisse potenti. Sed fermentum sapien rhoncus dapibus lobortis. Sed finibus efficitur ornare. Quisque et dui nec turpis hendrerit volutpat eget eleifend purus.</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+
+    //
+    // JQuery, since Bootstrap uses JQuery
+    //
+
+
+    function getModalTarget(modal){
+      return $(modal).find('.focus-target')[0];
+    }
+
+    // Ensure users can only interact with modals when they are open,
+    // while ensuring they still have access to the browser chrome
+    // adapted from
+    // https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/
+    //
+    // To see how this works, comment out the event listener,
+    // and then observe that you can tab to the sizzle and pop buttons
+    // after tabbing through the form in the modal, even while the
+    // modal is open.
+    function focusRestrict ( event ) {
+      document.addEventListener('focus', function( event ) {
+        var modal = $('.modal.in')
+        if ( modal.length > 0 && !modal[0].contains(event.target) ) {
+          event.stopPropagation();
+          getModalTarget(modal).focus();
+        }
+      }, true);
+    }
+    window.addEventListener('keypress', focusRestrict);
+
+    // add aria-hidden to all non-modal content, when the modal is open
+    $('.modal').on('show.bs.modal', function (e) {
+      $('#regular-content').attr('aria-hidden', true);
+    })
+    $('.modal').on('hide.bs.modal', function (e) {
+      $('#regular-content').attr('aria-hidden', false);
+    })
+
+    // Manually focus on the target when the modal is opened,
+    // since the default implementation seems buggy and unreliable.
+    $('.modal').on('shown.bs.modal', function (e) {
+      $('#regular-content').attr('aria-hidden', true);
+      getModalTarget(this).focus();
+    })
+  </script>
+</body>
+</html>

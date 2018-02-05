@@ -7,6 +7,8 @@
 - [Hidden text for extra context](./code/hidden-text/)
 - [Accessible footnotes](./code/footnotes/)
 - [Form validation errors](./code/validation-errors/)
+- [Modals](./code/modals/)
+
 
 ### Content and Context
 
