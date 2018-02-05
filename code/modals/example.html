@@ -98,7 +98,7 @@
     <!--<div class="modal-content" aria-hidden="true" role="dialog"></div> -->
     <!--<div class="modal-content" aria-hidden="true" role="dialog"></div> -->
   </div>
-  <div id="regular-content">
+  <div id="main-content">
     <!-- This page is too simple to require a skip link, but this is where
          we'd put one if we needed it-->
     <!-- <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a> -->
@@ -165,16 +165,16 @@
 
     // add aria-hidden to all non-modal content, when the modal is open
     $('.modal').on('show.bs.modal', function (e) {
-      $('#regular-content').attr('aria-hidden', true);
+      $('#main-content').attr('aria-hidden', true);
     })
     $('.modal').on('hide.bs.modal', function (e) {
-      $('#regular-content').attr('aria-hidden', false);
+      $('#main-content').attr('aria-hidden', false);
     })
 
     // Manually focus on the target when the modal is opened,
     // since the default implementation seems buggy and unreliable.
     $('.modal').on('shown.bs.modal', function (e) {
-      $('#regular-content').attr('aria-hidden', true);
+      $('#main-content').attr('aria-hidden', true);
       getModalTarget(this).focus();
     })
   </script>

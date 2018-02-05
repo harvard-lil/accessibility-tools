@@ -34,11 +34,11 @@ The Spec
 Let's Do It!
 ------------
 
-[Scott O'Hara's](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)[archived at https://perma.cc/P49Q-MFGE] approach to modals is the best I've seen. If you are rolling your own, I recommend you make heavy use of his code.
+[Scott O'Hara's approach to modals](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)[archived at https://perma.cc/P49Q-MFGE] is the best I've seen. If you are rolling your own, I recommend you make heavy use of his code.
 
 Since most of our apps are built on top of Bootstrap, we're going to start with a Bootstrap 3 modal and fix it up. Check out [example.html](../example.html) for a working example with detailed instructions.
 
-1. We'll make a container to hold the contents of the modal window. We'll make it the very first element of the body (even before our [skip link](../skip-links/)). This ensures that, when the modal window is open (and everything else on the screen is hidden), that users can press shirt + tab to interact with their browser's controls, like the address bar, in the usual way.
+1. We'll make a container to hold the contents of the modal windows. We'll make it the very first element of the body (even before our [skip link](../skip-links/)). This ensures that, when the modal window is open (and everything else on the screen is hidden), that users can press shift + tab to interact with their browser's controls, like the address bar, in the usual way.
 
 2. We'll wrap up all the rest of the contents of the body tag (excluding scripts, if you like) in a div with a unique id. This will make it easy to ensure that when the modal is open, people can only interact with the modal, and not with the content underneath.
 
