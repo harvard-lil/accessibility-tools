@@ -51,5 +51,5 @@ modal, and b) to make sure assistive technology doesn't navigate outside either 
 
   I'm not sure how well [`aria-modal`](https://www.w3.org/TR/wai-aria-1.1/#aria-modal) is supported at the moment: it's a relative newcomer to the scene, and [has a reputation for causing problems](https://labs.ssbbartgroup.com/index.php/ARIA_region_role_with_aria-modal). In a spirit of caution, I think we shouldn't rely on it yet, instead using the older practice of [making all non-modal content `aria-hidden`](https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html)
 
-5. We'll add javascript and tweak out markup to make focus more reliable
+5. We'll add javascript and tweak our markup to make focus more reliable
 for screen reader users.

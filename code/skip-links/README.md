@@ -26,7 +26,7 @@ until people focus on it.](../hidden-text/)
 
 3. Add skip links like this:
 
-   `<a href="#main" class="sr-only sr-only-focusable>Skip to main content</a>`
+   `<a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>`
 
    Point the skip links at specially-added targets like this:
 
