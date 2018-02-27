@@ -63,3 +63,36 @@ When To Do It
 
 Whenever something is obvious because of visual cues rather than page
 content, and you decide adding visible content isn't a good option.
+
+
+Troubleshooting
+---------------
+
+I've run into at least one situation where Bootstrap's sr-only class
+causes inline elements to be read out of order, at least with Voiceover
+on today's latest Webkit browsers (tested 2/27/18 on Mac OS Sierra).
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bizarre Behavior</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <!-- This is read "two one three" (undesired)-->
+  <p><a href="/">One <span class="sr-only">two</span> three.</a></p>
+
+  <!-- This is read "one two three" (desired) -->
+  <p>One <span class="sr-only">two</span> three.</p>
+</body>
+</html>
+```
+
+I don't know how to fix in general, but if your markup allows the `<a>` to
+be a block element, the below styling hack ensures elements are read in order:
+
+```
+<!-- This is read "one two three" -->
+<div><a href="/">One <div style="position: relative; display: inline-block;"><span class="sr-only">two </span></div>three</a></div>
+```
